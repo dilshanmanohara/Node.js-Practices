@@ -13,5 +13,10 @@ fs.writeFile(path.join(__dirname, 'files', 'reply.txt'), 'Nice to meet you', (er
     fs.appendFile(path.join(__dirname,'files','reply.txt'), '\nHello World!', (err) => {
         if (err) throw err;
         console.log('Append complete');
-    }); 
+
+        fs.rename(path.join(__dirname,'files','reply.txt'), path.join(__dirname,'files','newReply.txt'), (err) => {
+            if (err) throw err;
+            console.log('Rename complete');
+        });
+    });
 });
